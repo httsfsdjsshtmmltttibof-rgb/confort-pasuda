@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Comfort Posuda</title>
+    
+    <meta property="og:title" content="Comfort Posuda">
+    <meta property="og:description" content="Uy va oshxona uchun original mahsulotlar.">
+    <meta property="og:image" content="https://i.postimg.cc/Kv3r6N48/photo-2026-02-09-17-31-04.jpg">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --pink-bright: #ff0080;
+            --pink-dark: #5c0035;
+            --text-white: #ffffff;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            /* --- JONLI FON (ANIMATSIYA) --- */
+            background: linear-gradient(-45deg, #000000, #1a000d, #33001a, #000000);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite; /* 10 sekundda rang o'zgarib turadi */
+            
+            color: var(--text-white);
+            min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Fon animatsiyasi */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; } /* Pushti tusga o'tish */
+            100% { background-position: 0% 50%; } /* Qoraga qaytish */
+        }
+
+        /* Tabiiy bargli fon rasmi (Shaffof qilib ustidan qo'yilgan) */
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://i.pinimg.com/originals/96/97/81/969781898715423cb1140938b81dbdf2.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; /* Rasm xira ko'rinadi, orqadagi rang o'ynaydi */
+            filter: grayscale(100%);
+            z-index: 0; pointer-events: none;
+        }
+
+        .container {
+            width: 100%; max-width: 480px;
+            text-align: center; position: relative; z-index: 2;
+            padding-bottom: 80px;
+        }
+
+        /* --- PROFIL --- */
+        .profile-section {
+            margin-bottom: 30px;
+            display: flex; flex-direction: column; align-items: center;
+        }
+
+        .profile-frame {
+            width: 145px; height: 145px;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--pink-bright), var(--pink-dark));
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 0 30px rgba(255, 0, 128, 0.4);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .profile-img {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #fff;
+            border: 3px solid #000;
+        }
+
+        .brand-name {
+            font-size: 26px; font-weight: 800;
+            margin-bottom: 15px;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 0, 128, 0.6);
+        }
+
+        /* --- BIO --- */
+        .bio-text {
+            display: flex; flex-direction: column;
+            gap: 8px; margin-bottom: 30px;
+            background: rgba(0, 0, 0, 0.5); /* Shaffof qora */
+            border: 1px solid rgba(255, 0, 128, 0.3);
+            padding: 15px; border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+        .bio-line-1 { font-size: 16px; font-weight: 700; color: #ff85c2; }
+        .bio-line-2 { font-size: 14px; font-weight: 500; color: #eee; }
+        .bio-line-3 { font-size: 13px; font-weight: 400; color: #aaa; }
+
+        /* --- TUGMALAR (Yarim aylana / Kapsula) --- */
+        .links-list {
+            display: flex; flex-direction: column;
+            gap: 16px; width: 100%;
+        }
+
+        .pink-btn {
+            position: relative;
+            display: flex; align-items: center;
+            padding: 18px 25px;
+            text-decoration: none;
+            border-radius: 50px; /* To'liq aylana burchak */
+            
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--pink-dark);
+            border-left: 4px solid var(--pink-bright); 
+            
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .pink-btn::before {
+            content: ''; position: absolute; inset: 0;
+            border-radius: 50px;
+            box-shadow: inset 0 0 20px rgba(255, 0, 128, 0.05);
+            animation: pulsePink 3s infinite;
+        }
+
+        @keyframes pulsePink {
+            0% { box-shadow: inset 0 0 10px rgba(255, 0, 128, 0.05); }
+            50% { box-shadow: inset 0 0 25px rgba(255, 0, 128, 0.2); }
+            100% { box-shadow: inset 0 0 10px rgba(255, 0, 128, 0.05); }
+        }
+
+        .btn-icon {
+            font-size: 22px; margin-right: 20px;
+            color: var(--pink-bright);
+            width: 30px; text-align: center;
+            text-shadow: 0 0 10px rgba(255, 0, 128, 0.4);
+        }
+
+        .fa-phone { transform: scaleX(1) !important; }
+
+        .btn-text {
+            font-size: 16px; font-weight: 700;
+            color: #fff; text-transform: uppercase;
+            letter-spacing: 0.5px; flex-grow: 1;
+            text-align: left;
+        }
+
+        .btn-arrow { color: var(--pink-dark); font-size: 14px; opacity: 0.7; transition: 0.3s; }
+
+        .pink-btn:hover {
+            background: linear-gradient(90deg, rgba(70, 0, 35, 0.8), rgba(0,0,0,0.8));
+            border-color: var(--pink-bright);
+            transform: translateX(5px);
+            box-shadow: 0 0 25px rgba(255, 0, 128, 0.3);
+        }
+        .pink-btn:hover .btn-arrow { color: var(--pink-bright); opacity: 1; transform: translateX(5px); }
+
+
+        /* --- SHARE --- */
+        .share-btn {
+            position: fixed; bottom: 30px; right: 25px;
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, var(--pink-dark), var(--pink-bright));
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.2);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+            z-index: 99; cursor: pointer;
+            transition: 0.3s;
+        }
+        .share-btn:hover { transform: scale(1.1); box-shadow: 0 0 30px var(--pink-bright); }
+        .share-btn i { font-size: 24px; color: #fff; }
+        
+        /* --- FOOTER --- */
+        .safe-footer {
+            margin-top: 50px;
+            font-size: 13px;
+            font-family: monospace;
+            background: rgba(0,0,0,0.8);
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--pink-dark);
+            display: inline-block;
+        }
+        .safe-footer a { text-decoration: none; color: #ff85c2; font-weight: 700; cursor: pointer; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-frame">
+                <img src="https://i.postimg.cc/Kv3r6N48/photo-2026-02-09-17-31-04.jpg" alt="Comfort Posuda" class="profile-img">
+            </div>
+            <h1 class="brand-name">Comfort Posuda</h1>
+            
+            <div class="bio-text">
+                <div class="bio-line-1">Uy va oshxona uchun original mahsulotlar</div>
+                <div class="bio-line-2">Hamyonbop narxlar va yuqori sifat</div>
+                <div class="bio-line-3"><i class="fas fa-truck" style="margin-right:5px; color:var(--pink-bright)"></i> O‘zbekiston bo‘ylab yetkazib berish</div>
+            </div>
+        </div>
+
+        <div class="links-list">
+            
+            <a href="tel:+998990681385" class="pink-btn">
+                <i class="fas fa-phone btn-icon"></i>
+                <span class="btn-text">Telefon</span>
+                <i class="fas fa-chevron-right btn-arrow"></i>
+            </a>
+
+            <a href="https://t.me/comfort_posuda" target="_blank" class="pink-btn">
+                <i class="fab fa-telegram-plane btn-icon"></i>
+                <span class="btn-text">Telegram Kanal</span>
+                <i class="fas fa-chevron-right btn-arrow"></i>
+            </a>
+
+            <a href="https://t.me/Saodat_Mansurova" target="_blank" class="pink-btn">
+                <i class="fas fa-user-shield btn-icon"></i>
+                <span class="btn-text">Telegram Admin</span>
+                <i class="fas fa-chevron-right btn-arrow"></i>
+            </a>
+
+            <a href="https://www.instagram.com/comfort_posuda?utm_source=qr&igsh=MTNrOGx2dzJ3a2FoZg==" target="_blank" class="pink-btn">
+                <i class="fab fa-instagram btn-icon"></i>
+                <span class="btn-text">Instagram</span>
+                <i class="fas fa-chevron-right btn-arrow"></i>
+            </a>
+
+        </div>
+
+        <div class="safe-footer">
+            Xavfsizlik: <a href="#" onclick="alert('Xavfsizlik uchun safeNeolink2026')">safeNeolink2026</a>
+        </div>
+    </div>
+
+    <button class="share-btn" onclick="shareNow()">
+        <i class="fas fa-share-nodes"></i>
+    </button>
+
+    <script>
+        async function shareNow() {
+            const shareData = {
+                title: 'Comfort Posuda',
+                text: 'Comfort Posuda - Oshxona uchun original mahsulotlar:',
+                url: window.location.href
+            };
+            if (navigator.share) {
+                try { await navigator.share(shareData); } catch (err) {}
+            } else {
+                try {
+                    await navigator.clipboard.writeText(shareData.text + "\n" + shareData.url);
+                    alert("Havola nusxalandi!");
+                } catch (err) { alert("Nusxalandi!"); }
+            }
+        }
+    </script>
+
+</body>
+</html>
